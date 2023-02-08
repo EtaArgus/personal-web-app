@@ -1,0 +1,46 @@
+.gpt3__experience-content {
+  background: var(--color-bg);
+  width: 100%;
+}
+
+.gpt3__experience-content table {
+  color: #ffff;
+  font-family: var(--font-family);
+  margin: 0rem 0rem 0.8rem 0rem;
+  border-radius: 5px;
+  padding: 0.7rem;
+}
+
+.gpt3__experience-content th,
+td {
+  padding: 0.5rem;
+}
+
+.gpt3__experience-content h4 {
+  color: var(--color-text);
+  font-size: 20px;
+}
+
+.gpt3__experience-content li {
+  list-style: square;
+  margin-bottom: 0.3rem;
+}
+
+.gpt3__experience-content__table-company-highlight {
+  font-weight: bold;
+  color: var(--color-subtext);
+}
+
+.span-tech-stack {
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-blog);
+  margin-right: 1px;
+  margin-left: 1px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: default;
+}
