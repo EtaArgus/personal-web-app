@@ -1,0 +1,9 @@
+export { default as Ai } from "./ai/ai";
+export { default as Contact } from "./contact/contact";
+export { default as Header } from "./header/header";
+export { default as Music } from "./music/music";
+export { default as NavBar } from "./navBar/navBar";
+export { default as Projects } from "./resume/projects/projects";
+export { default as Experience } from "./resume/experience/experience";
+export { default as Skills } from "./resume/skills/skills";
+export { default as Studies } from "./resume/studies/studies";

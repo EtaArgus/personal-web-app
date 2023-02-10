@@ -1,0 +1,47 @@
+.jobTable {
+  width: 100%;
+}
+
+.jobTable table {
+  color: #ffff;
+  font-family: var(--font-family);
+  margin: 0rem 0rem 0.8rem 0rem;
+  border-radius: 5px;
+  padding: 0.7rem;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.jobTable th,
+td {
+  padding: 0.5rem;
+}
+
+.jobTable h4 {
+  color: var(--color-text);
+  font-size: 20px;
+}
+
+.jobTable li {
+  list-style: square;
+  margin-bottom: 0.3rem;
+}
+
+.jobTable-td-highlight {
+  font-weight: bold;
+  color: var(--color-subtext);
+}
+
+.jobTable-span-techSstack {
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-blog);
+  margin-right: 1px;
+  margin-left: 1px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: default;
+}
