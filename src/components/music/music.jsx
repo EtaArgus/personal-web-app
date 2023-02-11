@@ -1,5 +1,5 @@
 function Music() {
-  return <p>Music</p>;
+  return <p>This will be the Music section</p>;
 }
 
 export default Music;
