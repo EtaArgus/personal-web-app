@@ -1,0 +1,11 @@
+.resume {
+  display: flex;
+}
+
+.resume-menu {
+  width: 20%;
+}
+
+.resume-content {
+  width: 80%;
+}

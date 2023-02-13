@@ -1,0 +1,30 @@
+.gpt3__resumeNav {
+  display: flex;
+}
+
+.gpt3__resumeNav-navbar {
+  
+}
+
+.gpt3__resumeNav-navbar_links {
+  max-width: 200px;
+  min-width: 150px;
+  padding: 1rem 1rem 1rem 0.2rem;
+  margin: 0rem 2rem 0rem 0rem;
+  border-radius: 5px;
+}
+
+.gpt3__resumeNav-navbar_links p {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: capitalize;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.gpt3__resumeNav-content {
+  width: 70%;
+}
