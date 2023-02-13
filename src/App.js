@@ -2,9 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import {
-  Ai,
   Contact,
   Experience,
+  Weather,
   Header,
   Music,
   NavBar,
@@ -27,7 +27,14 @@ const App = () => {
           <Route path="skills" element={<Skills />} />
           <Route path="projects" element={<Projects />} />
         </Route>
-        <Route path="/ai" element={<Ai />} />
+
+        <Route path="/experiments">
+          <Route index element={<Weather />} />
+        </Route>
+
+
+
+        {/* <Route path="/experiments" element={<Experiments />} /> */}
         <Route path="/music" element={<Music />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

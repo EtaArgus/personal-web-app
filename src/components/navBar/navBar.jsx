@@ -14,7 +14,7 @@ const Menu = () => (
       <Link to="/resume">Resume</Link>
     </p>
     <p>
-      <Link to="/ai">AI</Link>
+      <Link to="/experiments">Experiments</Link>
     </p>
     <p>
       <Link to="/music">Music</Link>
