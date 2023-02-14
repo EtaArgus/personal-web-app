@@ -1,11 +1,11 @@
-.resume {
+.experiments {
   display: flex;
 }
 
-.resume-menu {
+.experiments-menu {
   width: 20%;
 }
 
-.resume-content {
+.experiments-content {
   width: 80%;
 }
