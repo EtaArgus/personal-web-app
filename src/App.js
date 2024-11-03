@@ -4,13 +4,13 @@ import "./App.css";
 import {
   Contact,
   Experience,
-  Weather,
   Header,
   Music,
   NavBar,
   Projects,
   Skills,
   Studies,
+  Weather,
 } from "./components";
 
 const App = () => {
@@ -31,8 +31,6 @@ const App = () => {
         <Route path="/experiments">
           <Route index element={<Weather />} />
         </Route>
-
-
 
         {/* <Route path="/experiments" element={<Experiments />} /> */}
         <Route path="/music" element={<Music />} />
