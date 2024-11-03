@@ -1,0 +1,51 @@
+.musicSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg, #000); /* Dark background color for the music section */
+  padding: 2rem;
+}
+
+.musicSection table {
+  color: #fff;
+  font-family: var(--font-family, Arial, sans-serif);
+  margin: 0 0 1rem 0;
+  border-radius: 5px;
+  padding: 1rem;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.musicSection p {
+  color: var(--color-text);
+  font-size: 20px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0 0 1rem;
+}
+
+.musicSection iframe {
+  border-radius: 10px;
+  background-color: var(--color-bg, #000); /* Default to black if color-bg is not set */
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+}
+
+.musicSection-highlight {
+  font-weight: bold;
+  color: var(--color-subtext, #ccc); /* Default to light gray if color-subtext is not set */
+}
+
+.musicSection-techStack {
+  border-radius: 10px;
+  background-color: var(--color-bg, #2b2b2b); /* Default to dark gray if color-bg is not set */
+  color: var(--color-text, #fff);
+  border: 2px solid var(--color-blog, #555); /* Default to a medium gray border */
+  padding: 2px 6px;
+  cursor: default;
+}
