@@ -27,13 +27,65 @@
   margin: 0 0 1rem;
 }
 
-.musicSection iframe {
-  border-radius: 10px;
-  background-color: var(--color-bg, #000); /* Default to black if color-bg is not set */
+.musicSection-featured {
   width: 100%;
-  max-width: 560px;
-  height: 315px;
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.musicSection-featured iframe {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border: none;
+}
+
+.musicSection-featuredTitle {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0.5rem 0 0 !important;
+  text-align: center;
+}
+
+.musicSection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.musicSection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.4rem;
+  transition: background-color 0.2s;
+}
+
+.musicSection-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.musicSection-card--active {
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: 2px solid var(--color-blog, #555);
+}
+
+.musicSection-card img {
+  width: 100%;
+  border-radius: 6px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.musicSection-cardTitle {
+  font-size: 13px !important;
+  margin: 0.4rem 0 0 !important;
+  text-align: center;
+  line-height: 1.3 !important;
 }
 
 .musicSection-highlight {

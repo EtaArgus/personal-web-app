@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import "../experiments.css";
 import ExperimentsMenu from "../experimentsMenu/experimentsMenu";
 import "./weather.css";
@@ -8,10 +8,7 @@ const Weather = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=
-                ${location}
-                &units=metric
-                &appid=3b8a5e7dcb25f21e5850c854f5548f53`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`;
 
   const searchLocation = (e) => {
     if (e.key === "Enter") {
@@ -35,7 +32,7 @@ const Weather = () => {
             <input
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              onKeyPress={searchLocation}
+              onKeyDown={searchLocation}
               placeholder="Enter Location..."
               type="text"
             />
@@ -46,7 +43,7 @@ const Weather = () => {
               <p>{data.name}</p>
             </div>
             <div className="weather-top-temp">
-              {data.main ? <h1>{data.main.temp}°F</h1> : null}
+              {data.main ? <h1>{data.main.temp}°C</h1> : null}
             </div>
             <div className="weather-top-description">
               {data.weather ? <p>{data.weather[0].main}</p> : null}
@@ -57,7 +54,7 @@ const Weather = () => {
             <div className="weather-bottom">
               <div className="weather-bottom-feels">
                 {data.main ? (
-                  <p className="bold">{data.main.feels_like}°F</p>
+                  <p className="bold">{data.main.feels_like}°C</p>
                 ) : null}
                 <p>Feels Like</p>
               </div>
@@ -65,7 +62,7 @@ const Weather = () => {
                 {data.main ? (
                   <p className="bold">{data.main.humidity}%</p>
                 ) : null}
-                <p>Humidiy</p>
+                <p>Humidity</p>
               </div>
               <div className="weather-bottom-wind">
                 {data.wind ? (
