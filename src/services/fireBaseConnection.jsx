@@ -1,20 +1,15 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCLBx40eYvD1yQFl93o5P8iLAQR3huEB_Q",
-  authDomain: "etaargus-personal-webapp.firebaseapp.com",
-  databaseURL: "https://etaargus-personal-webapp-default-rtdb.firebaseio.com",
-  projectId: "etaargus-personal-webapp",
-  storageBucket: "etaargus-personal-webapp.appspot.com",
-  messagingSenderId: "97420532627",
-  appId: "1:97420532627:web:ece5c494c586516d0ae666",
-  measurementId: "G-QNCMPLVJ8Q",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
