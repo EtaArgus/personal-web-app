@@ -5,7 +5,7 @@ import youtubeLinks from '../../data/youtubeLinks.json';
 function Music() {
   const videos = Object.entries(youtubeLinks).map(([title, url]) => ({
     title,
-    id: url.split('/').pop(),
+    id: new URL(url).pathname.slice(1),
   }));
 
   const [selected, setSelected] = useState(videos[0]);
@@ -16,6 +16,7 @@ function Music() {
 
       <div className="musicSection-featured">
         <iframe
+          key={selected.id}
           src={`https://www.youtube.com/embed/${selected.id}`}
           title={selected.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,17 +27,19 @@ function Music() {
 
       <div className="musicSection-grid">
         {videos.map((video) => (
-          <div
+          <button
+            type="button"
             className={`musicSection-card ${selected.id === video.id ? 'musicSection-card--active' : ''}`}
             key={video.id}
+            aria-pressed={selected.id === video.id}
             onClick={() => setSelected(video)}
           >
             <img
               src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-              alt={video.title}
+              alt=""
             />
-            <p className="musicSection-cardTitle">{video.title}</p>
-          </div>
+            <span className="musicSection-cardTitle">{video.title}</span>
+          </button>
         ))}
       </div>
     </div>
