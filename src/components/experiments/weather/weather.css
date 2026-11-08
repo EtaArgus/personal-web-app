@@ -1,72 +1,74 @@
-.weather-content {
-  display: flexbox;
-  border-radius: 5px;
-  padding: 0rem 0rem 1rem 1rem;
-  font-family: var(--font-family);
-  color: #fff;
+.weather-header {
+  padding-bottom: 40px;
 }
 
-.weather-search {
-  padding: 1rem 1rem 1rem 0rem;
-  text-align: center;
+.weather {
+  max-width: 640px;
+  font-size: 16px;
 }
 
-.weather-search input {
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 25px;
-  border: 1px solid rgb(255, 255, 255, 0.8);
-  background: rgb(255, 255, 255, 0.1);
-  color: #fff;
+.weather-form label {
+  display: block;
+  margin-bottom: 8px;
 }
 
-::placeholder {
-  color: #f8f8f8;
-}
-
-.weather-top {
-  padding: 1rem 1rem 1rem 0rem;
-}
-
-.weather-top-location {
-  color: #ffffff;
-}
-
-.weather-top-temp {
-  color: #ffffff;
-}
-
-.weather-top-description {
-  position: relative;
-  right: -90%;
-  transform-origin: 0 0;
-  transform: rotate(269deg);
-}
-
-.weather-bottom {
+.weather-fields {
   display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  width: 100%;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.bold {
-  font-weight: 700;
+.weather-input {
+  flex: 1 1 220px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
-.weather-bottom-feels {
-  color: #ffffff;
+.weather-input::placeholder {
+  color: var(--color-text-muted);
 }
 
-.weather-bottom-humidity {
-  color: #ffffff;
+.weather-error {
+  margin-top: 16px;
+  color: var(--color-accent);
 }
 
-.weather-bottom-wind {
-  color: #ffffff;
-  margin-bottom: 1rem;
+.weather-result {
+  margin-top: 32px;
+  padding: 28px;
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.weather-city {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.weather-temp {
+  margin: 8px 0 24px;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-line);
+}
+
+.weather-stats dd {
+  font-weight: 600;
 }

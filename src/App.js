@@ -1,41 +1,31 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import {
   Contact,
-  Experience,
+  Footer,
   Header,
   Music,
   NavBar,
-  Projects,
-  Skills,
-  Studies,
+  Resume,
   Weather,
 } from "./components";
 
 const App = () => {
   return (
     <div className="App">
-      <div className="gradient__bg">
-        <NavBar />
-      </div>
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/resume">
-          <Route index element={<Experience />} />
-          <Route path="studies" element={<Studies />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="projects" element={<Projects />} />
-        </Route>
-
-        <Route path="/experiments">
-          <Route index element={<Weather />} />
-        </Route>
-
-        {/* <Route path="/experiments" element={<Experiments />} /> */}
-        <Route path="/music" element={<Music />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <NavBar />
+      <main className="App-main">
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/resume/*" element={<Navigate to="/resume" replace />} />
+          <Route path="/experiments" element={<Weather />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 };

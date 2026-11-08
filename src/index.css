@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap");
 
 :root {
-  --font-family: "Manrope", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
-  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
-
-  --color-bg: #040c18;
-  --color-footer: #031b34;
-  --color-blog: #042c54;
-  --color-text: #81afdd;
-  --color-text-2: #4994ff;
-  --color-subtext: #ff8a71;
+  --color-bg: #0b0e14;
+  --color-surface: #131824;
+  --color-line: #252c3b;
+  --color-line-strong: #3a4356;
+  --color-text: #ede9e0;
+  --color-text-soft: #c3c9d5;
+  --color-text-muted: #a4acbc;
+  --color-accent: #ffb454;
 }
