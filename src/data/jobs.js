@@ -15,7 +15,7 @@ const jobs = [
       `Currently leading a project to automate the schedule of shifts of cashiers for supermarkets
     in Peru.`,
     ],
-    tech_stack: ["Python", "SQL", "Databricks", "Azure DevOps", "PowerBi"],
+    tech_stack: ["Python", "SQL", "Databricks", "Azure DevOps", "Power BI"],
   },
   {
     job_id: 2,
@@ -46,7 +46,7 @@ const jobs = [
       `Defined, along with the team, the tech stack to be used by the data analytic department.`,
       `Defined, along with the team, the project portfolio for the year.`,
     ],
-    tech_stack: ["Python", "R", "SQL", "Power BI", "Github"],
+    tech_stack: ["Python", "R", "SQL", "Power BI", "GitHub"],
   },
 
   {

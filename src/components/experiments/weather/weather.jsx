@@ -1,78 +1,91 @@
 import axios from "axios";
 import { useState } from "react";
-import "../experiments.css";
-import ExperimentsMenu from "../experimentsMenu/experimentsMenu";
 import "./weather.css";
 
 const Weather = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   const [location, setLocation] = useState("");
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`;
+  const [hasError, setHasError] = useState(false);
 
   const searchLocation = (e) => {
-    if (e.key === "Enter") {
-      axios.get(url).then((res) => {
+    e.preventDefault();
+    const query = location.trim();
+    if (!query) return;
+
+    setHasError(false);
+    axios
+      .get("https://api.openweathermap.org/data/2.5/weather", {
+        params: {
+          q: query,
+          units: "metric",
+          appid: process.env.REACT_APP_OPENWEATHER_API_KEY,
+        },
+      })
+      .then((res) => {
         setData(res.data);
-        console.log(res.data);
+        setLocation("");
+      })
+      .catch(() => {
+        setData(null);
+        setHasError(true);
       });
-      setLocation("");
-    }
   };
 
   return (
-    <div className="experiments section__padding" id="experiments-weather">
-      <div className="experiments-menu">
-        <ExperimentsMenu />
-      </div>
+    <div className="page">
+      <header className="page-header weather-header">
+        <p className="eyebrow">Experiments</p>
+        <h1 className="page-title">Weather</h1>
+      </header>
 
-      <div className="experiments-content">
-        <div className="weather-content gradient__bg">
-          <div className="weather-search">
+      <div className="weather">
+        <form className="weather-form" onSubmit={searchLocation}>
+          <label className="meta" htmlFor="weather-location">
+            City
+          </label>
+          <div className="weather-fields">
             <input
+              id="weather-location"
+              className="weather-input"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              onKeyDown={searchLocation}
-              placeholder="Enter Location..."
+              placeholder="Santiago"
               type="text"
             />
+            <button type="submit" className="btn btn--primary">
+              Search
+            </button>
           </div>
+        </form>
 
-          <div className="weather-top">
-            <div className="weather-top-location">
-              <p>{data.name}</p>
-            </div>
-            <div className="weather-top-temp">
-              {data.main ? <h1>{data.main.temp}°C</h1> : null}
-            </div>
-            <div className="weather-top-description">
-              {data.weather ? <p>{data.weather[0].main}</p> : null}
-            </div>
-          </div>
+        {hasError && (
+          <p className="weather-error" role="alert">
+            We couldn't get the weather for that city. Check the spelling and
+            try again.
+          </p>
+        )}
 
-          {data.name !== undefined && (
-            <div className="weather-bottom">
-              <div className="weather-bottom-feels">
-                {data.main ? (
-                  <p className="bold">{data.main.feels_like}°C</p>
-                ) : null}
-                <p>Feels Like</p>
+        {data && (
+          <section className="weather-result" aria-live="polite">
+            <p className="meta">{data.weather[0].main}</p>
+            <h2 className="weather-city">{data.name}</h2>
+            <p className="weather-temp">{data.main.temp}°C</p>
+            <dl className="weather-stats">
+              <div>
+                <dt className="meta">Feels like</dt>
+                <dd>{data.main.feels_like}°C</dd>
               </div>
-              <div className="weather-bottom-humidity">
-                {data.main ? (
-                  <p className="bold">{data.main.humidity}%</p>
-                ) : null}
-                <p>Humidity</p>
+              <div>
+                <dt className="meta">Humidity</dt>
+                <dd>{data.main.humidity}%</dd>
               </div>
-              <div className="weather-bottom-wind">
-                {data.wind ? (
-                  <p className="bold">{data.wind.speed} KPH</p>
-                ) : null}
-                <p>Wind Speed</p>
+              <div>
+                <dt className="meta">Wind speed</dt>
+                <dd>{data.wind.speed} m/s</dd>
               </div>
-            </div>
-          )}
-        </div>
+            </dl>
+          </section>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  padding-bottom: 72px;
+}
+
+.contact-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.contact-linkName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+}
